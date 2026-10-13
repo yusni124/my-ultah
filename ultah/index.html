@@ -1,0 +1,361 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f8f3e9">
+  <meta name="description" content="Perayaan ulang tahun, perjalanan hidup, dan ucapan syukur kepada Tuhan.">
+
+  <title>A New Chapter With God | My Birthday</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <!-- COVER PEMBUKA -->
+  <section class="cover" id="cover">
+    <div class="cover-decoration">✧</div>
+    <div class="cross">✝</div>
+
+    <p class="eyebrow">A DAY TO REMEMBER</p>
+
+    <p class="cover-caption">
+      Hari yang Tuhan jadikan, hari untuk bersukacita
+      dan mengucap syukur atas kehidupan.
+    </p>
+
+    <h1>My Birthday<br><span>With God</span></h1>
+
+    <div class="gold-line"></div>
+
+    <p class="cover-small">A NEW CHAPTER BEGINS</p>
+    <h2 id="coverName">Yusni Tamar P</h2>
+
+    <button class="button button-gold" id="openButton" type="button">
+      ✨ Open My Birthday
+    </button>
+
+    <p class="cover-verse">
+      “Inilah hari yang dijadikan TUHAN,
+      marilah kita bersorak-sorak dan bersukacita karenanya!”
+    </p>
+    <small>Mazmur 118:24</small>
+  </section>
+
+  <!-- MUSIK OPSIONAL -->
+  <audio id="birthdayMusic" loop preload="none">
+    <source src="music.mp3" type="audio/mpeg">
+  </audio>
+
+  <button id="musicButton" class="music-button"
+    type="button" aria-label="Putar musik">♫</button>
+
+  <!-- NAVIGASI -->
+  <nav class="navbar" id="navbar">
+    <a href="#home" class="logo">♡ My Journey</a>
+
+    <button id="menuButton" class="menu-button"
+      type="button" aria-label="Buka menu" aria-expanded="false">☰</button>
+
+    <div class="nav-links" id="navLinks">
+      <a href="#home">Home</a>
+      <a href="#gratitude">Gratitude</a>
+      <a href="#journey">My Journey</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#prayer">My Prayer</a>
+    </div>
+  </nav>
+
+  <main>
+    <!-- HERO / HOME -->
+    <section class="hero" id="home">
+      <div class="hero-overlay"></div>
+
+
+      <div class="hero-content reveal">
+        <p class="eyebrow light">BLESSED • GRATEFUL • LOVED</p>
+
+        <div class="hero-cross">✝</div>
+
+        <p class="hero-greeting">Today is all about</p>
+        <h1 id="heroName">Yusni Tamar P</h1>
+
+        <p class="hero-subtitle">
+          Another year, another blessing,<br>
+          another chapter with God.
+        </p>
+
+        <div class="gold-line center"></div>
+
+        <p class="hero-date" id="birthdayDateText">
+          Hari ulang tahunku
+        </p>
+
+        <a class="button button-outline" href="#gratitude">
+          Explore My Story ↓
+        </a>
+
+        <p class="scroll-hint">SCROLL TO DISCOVER</p>
+      </div>
+
+      <span class="floating flower flower-a">✿</span>
+      <span class="floating flower flower-b">✾</span>
+      <span class="floating flower flower-c">✧</span>
+      <span class="floating flower flower-d">✿</span>
+    </section>
+
+    <!-- UCAPAN SYUKUR -->
+    <section class="section gratitude" id="gratitude">
+      <div class="section-heading reveal">
+        <p class="eyebrow">A HEART FULL OF GRATITUDE</p>
+        <span class="section-cross">✝</span>
+
+        <h2>Terima Kasih,<br>Tuhan Yesus</h2>
+
+        <p class="body-copy">
+          Hari ini bukan sekadar tentang bertambahnya usia,
+          tetapi tentang kasih setia Tuhan yang selalu baru
+          dalam setiap musim kehidupanku.
+        </p>
+
+        <blockquote>
+          “Bersyukurlah kepada TUHAN, sebab Ia baik!
+          Bahwasanya untuk selama-lamanya kasih setia-Nya.”
+          <cite>Mazmur 107:1</cite>
+        </blockquote>
+      </div>
+
+      <div class="gratitude-grid">
+        <article class="gratitude-card reveal">
+          <span>♡</span>
+          <h3>For His Love</h3>
+          <p>Terima kasih Tuhan, karena kasih-Mu tidak pernah meninggalkanku.</p>
+        </article>
+
+        <article class="gratitude-card reveal">
+          <span>✧</span>
+          <h3>For His Grace</h3>
+          <p>Di setiap kelemahan, aku belajar melihat anugerah-Mu cukup bagiku.</p>
+        </article>
+
+        <article class="gratitude-card reveal">
+          <span>☼</span>
+          <h3>For New Hope</h3>
+          <p>Setiap hari adalah kesempatan baru untuk bertumbuh bersama-Mu.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- COUNTDOWN ULANG TAHUN BERIKUTNYA -->
+    <section class="countdown-section">
+      <div class="countdown-overlay"></div>
+
+      <div class="countdown-content reveal">
+        <p class="eyebrow light">UNTIL MY NEXT BIRTHDAY</p>
+        <h2>Another Year of Grace</h2>
+        <p>
+          Masih banyak cerita, harapan, dan berkat
+          yang akan kutemukan bersama Tuhan.
+        </p>
+
+        <div class="countdown-grid">
+          <div class="time-card">
+            <span id="days">00</span>
+            <small>HARI</small>
+          </div>
+          <div class="time-card">
+            <span id="hours">00</span>
+            <small>JAM</small>
+          </div>
+          <div class="time-card">
+            <span id="minutes">00</span>
+            <small>MENIT</small>
+          </div>
+          <div class="time-card">
+            <span id="seconds">00</span>
+            <small>DETIK</small>
+          </div>
+        </div>
+
+        <p id="countdownMessage" aria-live="polite"></p>
+      </div>
+    </section>
+
+    <!-- PERJALANAN HIDUP -->
+    <section class="section journey" id="journey">
+      <div class="section-heading reveal">
+        <p class="eyebrow">MY STORY WITH GOD</p>
+        <h2>Perjalanan yang Penuh Arti</h2>
+        <p>Setiap musim hidup memiliki cerita dan pelajarannya sendiri.</p>
+      </div>
+
+      <div class="timeline">
+        <article class="timeline-item reveal">
+          <div class="timeline-dot">♡</div>
+          <div class="timeline-card">
+            <p class="timeline-label">CHAPTER 01</p>
+            <h3>Masa Lalu</h3>
+            <p>
+              Aku bersyukur untuk setiap langkah yang telah kulewati,
+              termasuk masa sulit yang membentukku menjadi pribadi
+              yang lebih kuat.
+            </p>
+          </div>
+        </article>
+
+        <article class="timeline-item reveal">
+          <div class="timeline-dot">✝</div>
+          <div class="timeline-card">
+            <p class="timeline-label">CHAPTER 02</p>
+            <h3>Hari Ini</h3>
+            <p>
+              Aku belajar menikmati proses, menghargai hal-hal sederhana,
+              dan percaya bahwa Tuhan tetap bekerja dalam hidupku.
+            </p>
+          </div>
+        </article>
+
+        <article class="timeline-item reveal">
+          <div class="timeline-dot">✧</div>
+          <div class="timeline-card">
+            <p class="timeline-label">CHAPTER 03</p>
+            <h3>Masa Depan</h3>
+            <p>
+              Aku menyerahkan mimpi, rencana, dan masa depanku
+              kepada Tuhan, sambil terus melangkah dengan iman dan harapan.
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- GALERI -->
+    <section class="section gallery" id="gallery">
+      <div class="section-heading reveal">
+        <p class="eyebrow">LITTLE MOMENTS, BIG BLESSINGS</p>
+        <h2>My Memory Lane</h2>
+        <p>Kenangan kecil yang membuat hidup terasa begitu berarti.</p>
+      </div>
+
+      <div class="gallery-grid">
+        <button class="gallery-item reveal" type="button">
+          <img src="1.jpeg"
+            alt="Foto ulang tahunku" loading="lazy">
+          <span>Little joys ♡</span>
+        </button>
+
+        <button class="gallery-item reveal" type="button">
+          <img src="https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&fit=crop&w=900&q=85"
+            alt="Cahaya pagi yang indah" loading="lazy">
+          <span>New beginnings ✧</span>
+        </button>
+
+        <button class="gallery-item reveal" type="button">
+          <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=85"
+            alt="Pemandangan alam" loading="lazy">
+          <span>God's creation ☼</span>
+        </button>
+
+        <button class="gallery-item reveal" type="button">
+          <img src="https://images.unsplash.com/photo-1511988617509-a57c8a288659?auto=format&fit=crop&w=900&q=85"
+            alt="Momen bersama orang terkasih" loading="lazy">
+          <span>Precious memories ♡</span>
+        </button>
+
+        <button class="gallery-item reveal" type="button">
+          <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=900&q=85"
+            alt="Langit malam penuh bintang" loading="lazy">
+          <span>Endless hope ✧</span>
+        </button>
+
+        <button class="gallery-item reveal" type="button">
+          <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=900&q=85"
+            alt="Pegunungan diselimuti kabut" loading="lazy">
+          <span>Trust His timing ♡</span>
+        </button>
+      </div>
+
+      <p class="gallery-note">
+        Ganti foto-foto ini dengan kenangan ulang tahun dan foto pribadimu.
+      </p>
+    </section>
+
+    <!-- DOA PRIBADI -->
+    <section class="prayer-section" id="prayer">
+      <div class="prayer-overlay"></div>
+
+      <div class="prayer-content reveal">
+        <span class="prayer-cross">✝</span>
+        <p class="eyebrow light">A PRAYER FOR MY NEW AGE</p>
+
+        <h2>Doa untuk Babak<br>Hidup yang Baru</h2>
+
+        <p class="prayer-text">
+          Tuhan Yesus yang baik, terima kasih untuk kehidupan,
+          kesehatan, penyertaan, dan kasih setia-Mu hingga hari ini.
+          <br><br>
+          Di usia yang baru ini, tuntunlah setiap langkahku.
+          Berikan aku hati yang penuh kasih, iman yang teguh,
+          hikmat dalam mengambil keputusan, dan keberanian untuk
+          menjalani setiap proses yang Engkau izinkan.
+          <br><br>
+          Ajarku untuk tetap bersyukur dalam segala keadaan,
+          menjadi berkat bagi sesama, dan semakin mengenal-Mu
+          setiap hari. Biarlah hidupku memuliakan nama-Mu.
+          <br><br>
+          Dalam nama Tuhan Yesus Kristus, aku berdoa. Amin.
+        </p>
+
+        <div class="gold-line center"></div>
+        <p class="prayer-signature">With love, faith & gratitude ♡</p>
+      </div>
+    </section>
+
+    <!-- PENUTUP -->
+    <footer class="footer">
+      <div class="footer-cross">✝</div>
+      <p class="eyebrow light">THIS IS MY DAY</p>
+
+      <h2>Thank You, Jesus.</h2>
+
+      <p>
+        Untuk satu tahun lagi kehidupan,
+        untuk kasih yang tak berkesudahan,
+        dan untuk harapan yang selalu baru.
+      </p>
+
+      <h3 id="footerName">Nama Kamu</h3>
+
+      <p class="footer-verse">
+        “Segala perkara dapat kutanggung di dalam Dia
+        yang memberi kekuatan kepadaku.”
+      </p>
+      <small>Filipi 4:13</small>
+
+      <div class="gold-line center"></div>
+
+      <button class="button button-outline" id="shareButton" type="button">
+        ↗ Bagikan Halaman
+      </button>
+
+      <p class="copyright">Made with ♡ and God's grace</p>
+    </footer>
+  </main>
+
+  <!-- POPUP FOTO -->
+  <div class="lightbox" id="lightbox"
+    role="dialog" aria-modal="true" aria-label="Pratinjau foto"
+    aria-hidden="true">
+    <button id="closeLightbox" type="button"
+      class="lightbox-close" aria-label="Tutup foto">×</button>
+    <img id="lightboxImage" src="" alt="Foto kenangan">
+  </div>
+
+</body>
+</html>

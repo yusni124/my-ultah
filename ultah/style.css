@@ -1,0 +1,1108 @@
+
+/* ===================================
+   1. TEMA DAN RESET
+=================================== */
+:root {
+  --cream: #f8f3e9;
+  --cream-dark: #eee4d4;
+  --brown: #624b3a;
+  --brown-dark: #352b25;
+  --gold: #c4a16a;
+  --gold-light: #ecd6ac;
+  --green: #485b4b;
+  --text: #453b33;
+  --muted: #84796d;
+  --serif: "Cormorant Garamond", Georgia, serif;
+  --sans: "Poppins", Arial, sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+body {
+  background: var(--cream);
+  color: var(--text);
+  font-family: var(--sans);
+  line-height: 1.8;
+  overflow-x: hidden;
+}
+
+body.no-scroll {
+  overflow: hidden;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+}
+
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 4px;
+}
+
+.section {
+  padding: 100px 7%;
+}
+
+h1, h2, h3 {
+  font-family: var(--serif);
+  font-weight: 500;
+  line-height: 1.15;
+}
+
+h2 {
+  font-size: clamp(36px, 5vw, 56px);
+  color: var(--brown);
+}
+
+.eyebrow {
+  color: var(--gold);
+  font-size: 10px;
+  letter-spacing: 4px;
+  margin-bottom: 16px;
+  font-weight: 500;
+}
+
+.eyebrow.light {
+  color: var(--gold-light);
+}
+
+.gold-line {
+  width: 65px;
+  height: 1px;
+  background: var(--gold);
+  margin: 25px 0;
+}
+
+.gold-line.center {
+  margin: 25px auto;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  padding: 13px 24px;
+  font-size: 11px;
+  letter-spacing: 1px;
+  transition: .3s ease;
+  border: 1px solid transparent;
+}
+
+.button:hover {
+  transform: translateY(-3px);
+}
+
+.button-gold {
+  background: var(--gold);
+  color: white;
+}
+
+.button-gold:hover {
+  background: var(--brown);
+}
+
+.button-outline {
+  color: white;
+  border-color: #ffffffa0;
+  background: #ffffff10;
+  backdrop-filter: blur(5px);
+}
+
+.button-outline:hover {
+  color: var(--brown-dark);
+  background: white;
+}
+
+/* ===================================
+   2. COVER PEMBUKA
+=================================== */
+.cover {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 25px 20px;
+  overflow-y: auto;
+  text-align: center;
+  background:
+    radial-gradient(ellipse at 50% 0%, white, transparent 70%),
+    var(--cream);
+  transition:
+    opacity .9s ease,
+    visibility .9s ease,
+    transform .9s ease;
+}
+
+.cover::before,
+.cover::after {
+  content: "";
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  border: 1px solid #c4a16a55;
+  border-radius: 50% 0 50% 0;
+  transform: rotate(45deg);
+  pointer-events: none;
+}
+
+.cover::before {
+  top: -75px;
+  left: -65px;
+}
+
+.cover::after {
+  bottom: -75px;
+  right: -65px;
+  transform: rotate(225deg);
+}
+
+.cover.opened {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-25px);
+  pointer-events: none;
+}
+
+.cover-decoration {
+  position: absolute;
+  top: 15%;
+  right: 15%;
+  color: var(--gold);
+  font-size: 38px;
+  animation: sparkle 3s ease-in-out infinite;
+}
+
+.cross {
+  color: var(--gold);
+  font-size: 36px;
+  animation: crossGlow 3s ease-in-out infinite;
+}
+
+.cover-caption {
+  max-width: 350px;
+  font-size: 11px;
+  color: var(--muted);
+  line-height: 2;
+}
+
+.cover h1 {
+  color: var(--brown);
+  font-size: clamp(50px, 8vw, 80px);
+  margin: 20px 0;
+  font-style: italic;
+}
+
+.cover h1 span {
+  color: var(--gold);
+}
+
+.cover-small {
+  font-size: 9px;
+  letter-spacing: 3px;
+  color: var(--muted);
+}
+
+.cover h2 {
+  font-size: 33px;
+  margin: 5px 0 20px;
+}
+
+.cover-verse {
+  max-width: 360px;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 15px;
+  color: var(--brown);
+  margin-top: 15px;
+}
+
+.cover > small {
+  color: var(--gold);
+  font-size: 10px;
+}
+
+/* ===================================
+   3. NAVIGASI
+=================================== */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  min-height: 68px;
+  padding: 10px 7%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #f8f3e9ed;
+  backdrop-filter: blur(15px);
+  border-bottom: 1px solid #c4a16a30;
+  transition: box-shadow .3s;
+}
+
+.navbar.scrolled {
+  box-shadow: 0 6px 25px #352b2512;
+}
+
+.logo {
+  color: var(--brown);
+  font-family: var(--serif);
+  font-size: 25px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+}
+
+.nav-links a {
+  font-size: 10px;
+  transition: color .3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--gold);
+}
+
+.menu-button {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--brown);
+  font-size: 25px;
+}
+
+/* ===================================
+   4. TOMBOL MUSIK
+=================================== */
+.music-button {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 500;
+  width: 47px;
+  height: 47px;
+  border: 1px solid var(--gold);
+  border-radius: 50%;
+  background: var(--brown);
+  color: white;
+  font-size: 22px;
+  box-shadow: 0 5px 20px #00000020;
+}
+
+.music-button.playing {
+  animation: musicSpin 4s linear infinite;
+}
+
+/* ===================================
+   5. HERO
+=================================== */
+.hero {
+  position: relative;
+  min-height: min(850px, 92svh);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  text-align: center;
+  color: white;
+  background-image:url("1.jpeg")
+    center / cover no-repeat;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    #30251dbf,
+    #59442d80,
+    #171711a8
+  );
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 35px 20px;
+}
+
+.hero-cross {
+  color: var(--gold-light);
+  font-size: 38px;
+  margin-bottom: 15px;
+  text-shadow: 0 0 25px #e7cb8e80;
+}
+
+.hero-greeting {
+  font-family: var(--serif);
+  font-size: 22px;
+  font-style: italic;
+  margin-top: 22px;
+}
+
+.hero h1 {
+  font-size: clamp(55px, 10vw, 105px);
+  font-style: italic;
+  color: #fff8eb;
+  margin: 10px 0 20px;
+  text-shadow: 0 5px 25px #00000025;
+}
+
+.hero-subtitle {
+  font-size: 12px;
+  line-height: 2.2;
+  color: #ffffffd6;
+}
+
+.hero-date {
+  letter-spacing: 2px;
+  font-size: 12px;
+  margin-bottom: 25px;
+}
+
+.scroll-hint {
+  margin-top: 65px;
+  font-size: 9px;
+  letter-spacing: 3px;
+  color: #ffffffb0;
+  animation: floatY 2s ease-in-out infinite;
+}
+
+.floating {
+  position: absolute;
+  z-index: 1;
+  color: #f0d7a6;
+  opacity: .8;
+  pointer-events: none;
+}
+
+.flower {
+  animation: flowerFloat 6s ease-in-out infinite;
+}
+
+.flower-a {
+  top: 15%;
+  left: 9%;
+  font-size: 34px;
+}
+
+.flower-b {
+  top: 35%;
+  right: 10%;
+  font-size: 30px;
+  animation-delay: -2s;
+}
+
+.flower-c {
+  bottom: 20%;
+  right: 18%;
+  font-size: 35px;
+  animation-delay: -4s;
+}
+
+.flower-d {
+  bottom: 15%;
+  left: 14%;
+  font-size: 24px;
+  animation-delay: -1s;
+}
+
+/* ===================================
+   6. UCAPAN SYUKUR
+=================================== */
+.gratitude {
+  background:
+    radial-gradient(ellipse at top, white, transparent 70%),
+    var(--cream);
+}
+
+.section-heading {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 50px;
+}
+
+.section-cross {
+  display: block;
+  color: var(--gold);
+  font-size: 30px;
+  margin: 15px 0;
+}
+
+.body-copy {
+  max-width: 580px;
+  margin: 20px auto;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 2.2;
+}
+
+blockquote {
+  max-width: 600px;
+  margin: 30px auto 0;
+  padding: 22px;
+  border-top: 1px solid #c4a16a60;
+  border-bottom: 1px solid #c4a16a60;
+  font-family: var(--serif);
+  font-size: 21px;
+  font-style: italic;
+  color: var(--brown);
+}
+
+blockquote cite {
+  display: block;
+  margin-top: 10px;
+  font-family: var(--sans);
+  font-style: normal;
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: var(--gold);
+}
+
+.gratitude-grid {
+  max-width: 1000px;
+  margin: 60px auto 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.gratitude-card {
+  padding: 32px 24px;
+  text-align: center;
+  background: #fffdf8a8;
+  border: 1px solid #c4a16a40;
+  transition: transform .4s, box-shadow .4s;
+}
+
+.gratitude-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px #5a453012;
+}
+
+.gratitude-card > span {
+  font-size: 30px;
+  color: var(--gold);
+}
+
+.gratitude-card h3 {
+  color: var(--brown);
+  font-size: 29px;
+  margin: 12px 0;
+}
+
+.gratitude-card p {
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 2;
+}
+
+/* ===================================
+   7. COUNTDOWN
+=================================== */
+.countdown-section {
+  position: relative;
+  padding: 100px 7%;
+  text-align: center;
+  color: white;
+  background:
+    url("https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&fit=crop&w=1800&q=85")
+    center / cover no-repeat;
+  background-attachment: fixed;
+}
+
+.countdown-overlay {
+  position: absolute;
+  inset: 0;
+  background: #26352ccf;
+}
+
+.countdown-content {
+  position: relative;
+  z-index: 1;
+}
+
+.countdown-content h2 {
+  color: white;
+}
+
+.countdown-content > p:not(.eyebrow):not(#countdownMessage) {
+  max-width: 500px;
+  margin: 18px auto 0;
+  font-size: 12px;
+  color: #ffffffc9;
+}
+
+.countdown-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 100px);
+  justify-content: center;
+  gap: 15px;
+  margin: 40px 0 20px;
+}
+
+.time-card {
+  padding: 17px 8px;
+  border: 1px solid #e6cc9b99;
+  background: #ffffff0c;
+  backdrop-filter: blur(5px);
+}
+
+.time-card span {
+  display: block;
+  color: var(--gold-light);
+  font-family: var(--serif);
+  font-size: 42px;
+  line-height: 1.3;
+}
+
+.time-card small {
+  font-size: 9px;
+  letter-spacing: 2px;
+}
+
+#countdownMessage {
+  color: var(--gold-light);
+  font-size: 12px;
+}
+
+/* ===================================
+   8. TIMELINE PERJALANAN HIDUP
+=================================== */
+.journey {
+  background: var(--cream-dark);
+}
+
+.timeline {
+  max-width: 760px;
+  margin: auto;
+  position: relative;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  bottom: 10px;
+  left: 25px;
+  width: 1px;
+  background: #c4a16a90;
+}
+
+.timeline-item {
+  position: relative;
+  padding-left: 70px;
+  margin-bottom: 25px;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: 0;
+  top: 20px;
+  z-index: 1;
+  width: 51px;
+  height: 51px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--gold);
+  border-radius: 50%;
+  background: var(--cream);
+  color: var(--gold);
+  font-size: 22px;
+}
+
+.timeline-card {
+  padding: 27px 30px;
+  border: 1px solid #c4a16a45;
+  background: #fffdf8a8;
+  transition: transform .3s;
+}
+
+.timeline-card:hover {
+  transform: translateX(5px);
+}
+
+.timeline-label {
+  font-size: 9px;
+  letter-spacing: 3px;
+  color: var(--gold);
+}
+
+.timeline-card h3 {
+  color: var(--brown);
+  font-size: 32px;
+  margin: 8px 0;
+}
+
+.timeline-card p:last-child {
+  font-size: 12px;
+  line-height: 2.1;
+  color: var(--muted);
+}
+
+/* ===================================
+   9. GALERI
+=================================== */
+.gallery {
+  background: var(--cream);
+}
+
+.gallery-grid {
+  max-width: 1100px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 15px;
+}
+
+.gallery-item {
+  position: relative;
+  height: 290px;
+  overflow: hidden;
+  border: 0;
+  background: var(--cream-dark);
+  text-align: left;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .6s, filter .6s;
+}
+
+.gallery-item span {
+  position: absolute;
+  inset: auto 0 0;
+  padding: 35px 15px 15px;
+  color: white;
+  font-family: var(--serif);
+  font-size: 21px;
+  background: linear-gradient(transparent, #17130fba);
+  opacity: .9;
+  transition: opacity .3s;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.08);
+  filter: brightness(.85);
+}
+
+.gallery-item:hover span {
+  opacity: 1;
+}
+
+.gallery-note {
+  margin-top: 25px;
+  text-align: center;
+  font-size: 10px;
+  color: var(--muted);
+}
+
+/* ===================================
+   10. DOA PRIBADI
+=================================== */
+.prayer-section {
+  position: relative;
+  overflow: hidden;
+  padding: 100px 7%;
+  color: white;
+  text-align: center;
+  background:
+    url("https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&fit=crop&w=1800&q=85")
+    center / cover no-repeat;
+  background-attachment: fixed;
+}
+
+.prayer-overlay {
+  position: absolute;
+  inset: 0;
+  background: #30271de0;
+}
+
+.prayer-content {
+  position: relative;
+  z-index: 1;
+  max-width: 700px;
+  margin: auto;
+}
+
+.prayer-cross {
+  display: block;
+  font-size: 38px;
+  color: var(--gold-light);
+  margin-bottom: 20px;
+}
+
+.prayer-content h2 {
+  color: white;
+  margin: 20px 0 30px;
+}
+
+.prayer-text {
+  font-family: var(--serif);
+  font-size: 20px;
+  line-height: 1.9;
+  color: #ffffffdc;
+}
+
+.prayer-signature {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 21px;
+  color: var(--gold-light);
+}
+
+/* ===================================
+   11. FOOTER
+=================================== */
+.footer {
+  padding: 75px 7% 30px;
+  text-align: center;
+  color: #ffffffc9;
+  background: var(--brown-dark);
+}
+
+.footer-cross {
+  font-size: 35px;
+  color: var(--gold-light);
+  animation: crossGlow 3s ease-in-out infinite;
+}
+
+.footer h2 {
+  color: white;
+  font-size: clamp(43px, 7vw, 70px);
+  margin: 20px 0;
+}
+
+.footer > p:not(.eyebrow):not(.copyright) {
+  max-width: 480px;
+  margin: auto;
+  font-size: 12px;
+}
+
+.footer h3 {
+  font-size: 38px;
+  color: var(--gold-light);
+  font-style: italic;
+  margin-top: 25px;
+}
+
+.footer-verse {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 19px !important;
+  margin-top: 20px !important;
+}
+
+.footer > small {
+  display: block;
+  color: var(--gold-light);
+  font-size: 10px;
+  margin-top: 8px;
+}
+
+.copyright {
+  margin-top: 50px;
+  font-size: 10px;
+  color: #ffffff75;
+}
+
+/* ===================================
+   12. LIGHTBOX
+=================================== */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  background: #171410ed;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .3s, visibility .3s;
+}
+
+.lightbox.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.lightbox img {
+  max-width: 90%;
+  max-height: 85vh;
+  object-fit: contain;
+  border: 1px solid var(--gold);
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 12px;
+  right: 25px;
+  background: transparent;
+  border: 0;
+  color: white;
+  font-size: 45px;
+}
+
+/* ===================================
+   13. ANIMASI SCROLL
+=================================== */
+.reveal {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: opacity .8s ease, transform .8s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes flowerFloat {
+  0%, 100% {
+    transform: translateY(0) rotate(0);
+  }
+  50% {
+    transform: translateY(-20px) rotate(15deg);
+  }
+}
+
+@keyframes floatY {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(8px);
+  }
+}
+
+@keyframes sparkle {
+  0%, 100% {
+    opacity: .45;
+    transform: scale(.8) rotate(0);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2) rotate(25deg);
+  }
+}
+
+@keyframes crossGlow {
+  0%, 100% {
+    text-shadow: 0 0 5px #e8cc9d20;
+  }
+  50% {
+    text-shadow: 0 0 25px #e8cc9d99;
+  }
+}
+
+@keyframes musicSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ===================================
+   14. RESPONSIVE MOBILE
+=================================== */
+@media (max-width: 768px) {
+  .section {
+    padding: 75px 6%;
+  }
+
+  .navbar {
+    padding: 10px 6%;
+    min-height: 63px;
+  }
+
+  .menu-button {
+    display: block;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 5px 6% 15px;
+    background: var(--cream);
+    border-bottom: 1px solid #c4a16a55;
+    box-shadow: 0 12px 20px #0000000c;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-8px);
+    transition: opacity .25s, transform .25s, visibility .25s;
+  }
+
+  .nav-links.open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .nav-links a {
+    padding: 11px 0;
+    font-size: 12px;
+    border-bottom: 1px solid #c4a16a25;
+  }
+
+  .hero {
+    min-height: 85svh;
+  }
+
+  .hero h1 {
+    font-size: clamp(53px, 12vw, 80px);
+  }
+
+  .gratitude-grid {
+    grid-template-columns: 1fr;
+    max-width: 420px;
+    margin-top: 35px;
+  }
+
+  .countdown-section,
+  .prayer-section {
+    background-attachment: scroll;
+  }
+
+  .countdown-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 7px;
+    max-width: 430px;
+    margin: 35px auto 20px;
+  }
+
+  .time-card {
+    padding: 13px 3px;
+  }
+
+  .time-card span {
+    font-size: 30px;
+  }
+
+  .time-card small {
+    font-size: 8px;
+    letter-spacing: 1px;
+  }
+
+  .timeline-item {
+    padding-left: 60px;
+  }
+
+  .timeline-card {
+    padding: 22px 18px;
+  }
+
+  .timeline-dot {
+    width: 45px;
+    height: 45px;
+  }
+
+  .timeline::before {
+    left: 22px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .gallery-item {
+    height: 230px;
+  }
+
+  .prayer-text {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 420px) {
+  .cover h1 {
+    font-size: 50px;
+  }
+
+  .cover-caption {
+    max-width: 290px;
+  }
+
+  .cover-decoration {
+    top: 8%;
+    right: 10%;
+  }
+
+  .gallery-item {
+    height: 185px;
+  }
+
+  .gallery-item span {
+    font-size: 17px;
+    padding: 25px 8px 8px;
+  }
+
+  .time-card span {
+    font-size: 25px;
+  }
+
+  .time-card small {
+    font-size: 7px;
+  }
+
+  .timeline-card h3 {
+    font-size: 28px;
+  }
+
+  .prayer-text {
+    font-size: 17px;
+  }
+}
+
+/* Aksesibilitas: kurangi animasi jika diminta pengguna */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
